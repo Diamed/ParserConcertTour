@@ -1,0 +1,26 @@
+﻿<Window x:Class="ParserConcertTour.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParserConcertTour"
+        mc:Ignorable="d"
+        Title="Гастроли" Height="366.314" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="grid" Margin="0,0,0,15" MouseUp="grid_MouseUp" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Path=EventDate}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Place" Binding="{Binding Path=EventPlace.Name}" ClipboardContentBinding="{x:Null}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=EventName}" ClipboardContentBinding="{x:Null}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="statusBar" Content="" Margin="0,0,111,0" Height="15" VerticalAlignment="Bottom" FontSize="9" Padding="5,0" IsEnabled="False" Grid.ColumnSpan="2"/>
+        <Button x:Name="inWeb" Content="Показать на сайте" Margin="406,0,0,0" Padding="0" VerticalContentAlignment="Center" FontSize="9" Click="inWeb_Click" Height="16" VerticalAlignment="Bottom"/>
+        
+        <TextBox x:Name="urlAddress" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,0,30,0" Visibility="Hidden"/>
+        <Button x:Name="goUrl" Content="Go" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Click="goUrl_Click" Visibility="Hidden"/>
+
+    </Grid>
+</Window>
